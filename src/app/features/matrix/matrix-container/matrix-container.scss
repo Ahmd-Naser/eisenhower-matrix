@@ -1,0 +1,26 @@
+.matrix-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.matrix-header {
+  margin-bottom: 20px;
+  color: var(--text-main);
+}
+
+.matrix-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 15px;
+  height: calc(100% - 50px);
+}
+
+@media (max-width: 900px) {
+  .matrix-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    min-height: 800px;
+  }
+}

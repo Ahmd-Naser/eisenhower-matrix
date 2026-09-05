@@ -1,0 +1,28 @@
+<div class="quadrant" [class]="quadrantClass()" (click)="taskInput.focus()">
+  <div class="quadrant-title">{{ title() }}</div>
+  
+  <!-- استخدام @for الحديثة بدلاً من *ngFor -->
+  @for (task of tasks(); track task.id) {
+    <div class="matrix-task-card">
+      <input type="checkbox" [checked]="task.isCompleted" (change)="taskToggled.emit(task.id)">
+      <div class="task-details">
+        <div class="task-title">{{ task.title }}</div>
+        
+        <!-- استخدام @if الحديثة بدلاً من *ngIf -->
+        @if (task.expectedTimeInMinutes) {
+          <div class="task-time">
+            ⏱ {{ task.expectedTimeInMinutes }} دقيقة
+          </div>
+        }
+      </div>
+    </div>
+  }
+
+  <input 
+    #taskInput 
+    type="text" 
+    class="inline-add-task" 
+    placeholder="+ اضغط هنا لإضافة مهمة..."
+    (keydown)="onAddTask($event, taskInput)"
+  >
+</div>

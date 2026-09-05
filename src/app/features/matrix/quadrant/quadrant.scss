@@ -1,0 +1,81 @@
+.quadrant {
+  background: var(--surface-color);
+  border-radius: 12px;
+  padding: 15px;
+  border-top: 4px solid;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  cursor: text;
+  height: 100%;
+
+  &.q1 { border-top-color: var(--q1-color); .quadrant-title { color: var(--q1-color); } }
+  &.q2 { border-top-color: var(--q2-color); .quadrant-title { color: var(--q2-color); } }
+  &.q3 { border-top-color: var(--q3-color); .quadrant-title { color: var(--q3-color); } }
+  &.q4 { border-top-color: var(--q4-color); .quadrant-title { color: var(--q4-color); } }
+}
+
+.quadrant-title {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  pointer-events: none;
+}
+
+.matrix-task-card {
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: default;
+
+  .task-details {
+    flex: 1;
+    .task-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .task-time {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+  }
+}
+
+.inline-add-task {
+  width: 100%;
+  background: transparent;
+  border: 1px dashed transparent;
+  color: var(--text-main);
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: all 0.2s;
+  margin-top: auto;
+
+  &::placeholder {
+    color: var(--text-muted);
+    opacity: 0.7;
+  }
+  &:hover, &:focus {
+    background: var(--input-bg);
+  }
+  &:focus {
+    border: 1px solid var(--text-muted);
+  }
+}
+
+// ألوان الإطار عند التركيز
+.q1 .inline-add-task:focus { border-color: var(--q1-color); }
+.q2 .inline-add-task:focus { border-color: var(--q2-color); }
+.q3 .inline-add-task:focus { border-color: var(--q3-color); }
+.q4 .inline-add-task:focus { border-color: var(--q4-color); }

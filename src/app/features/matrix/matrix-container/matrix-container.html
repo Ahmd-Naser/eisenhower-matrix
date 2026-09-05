@@ -1,0 +1,45 @@
+<div class="matrix-container">
+  <div class="matrix-header">
+    <h2>مصفوفة أيزنهاور</h2>
+  </div>
+
+  <div class="matrix-grid">
+    
+    <!-- Quadrant 1 -->
+    <app-quadrant 
+      [title]="'1. نفذ فوراً (مهم وعاجل)'"
+      [quadrantClass]="'q1'"
+      [tasks]="doFirstTasks()"
+      (taskAdded)="onTaskAdded($event, 1)"
+      (taskToggled)="onTaskToggled($event)">
+    </app-quadrant>
+
+    <!-- Quadrant 2 -->
+    <app-quadrant 
+      [title]="'2. جدوِل (مهم وغير عاجل)'"
+      [quadrantClass]="'q2'"
+      [tasks]="scheduleTasks()"
+      (taskAdded)="onTaskAdded($event, 2)"
+      (taskToggled)="onTaskToggled($event)">
+    </app-quadrant>
+
+    <!-- Quadrant 3 -->
+    <app-quadrant 
+      [title]="'3. فوّض (غير مهم وعاجل)'"
+      [quadrantClass]="'q3'"
+      [tasks]="delegateTasks()"
+      (taskAdded)="onTaskAdded($event, 3)"
+      (taskToggled)="onTaskToggled($event)" >
+    </app-quadrant>
+
+    <!-- Quadrant 4 -->
+    <app-quadrant 
+      [title]="'4. احذف (غير مهم وغير عاجل)'"
+      [quadrantClass]="'q4'"
+      [tasks]="eliminateTasks()"
+      (taskAdded)="onTaskAdded($event, 4)"
+      (taskToggled)="onTaskToggled($event)">
+    </app-quadrant>
+
+  </div>
+</div>
