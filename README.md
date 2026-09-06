@@ -1,59 +1,93 @@
-# EisenhowerMatrix
+# 🚀 Eisenhower Matrix & Daily Routine PWA
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.1.4.
+A modern, high-performance productivity web application built with **Angular (Standalone Components, Signals)** and styled with a custom dark theme. It combines the proven **Eisenhower Matrix** methodology with a daily habit/routine tracker to help you prioritize tasks efficiently and stay organized.
 
-## Development server
+<img width="1915" height="1043" alt="eisinghower matrix" src="https://github.com/user-attachments/assets/b936407e-49f6-475a-ad63-0bc3341fb54d" />
+---
 
-To start a local development server, run:
+## ✨ Features
 
-```bash
-ng serve
+- **Eisenhower Matrix Management**: Categorize tasks into four distinct quadrants (Urgent & Important, Important & Not Urgent, Urgent & Not Important, Neither).
+- **Daily Routine Tracker**: Manage daily habits with a 24-hour deadline mechanism, quick refresh/reset actions, and persistent state.
+- **Global Task Dashboard**: A unified view of all active and completed tasks, automatically sorted by priority with smooth visual strike-throughs.
+- **Progressive Web App (PWA)**: Fully installable as a native desktop or mobile application.
+- **Local Persistence**: Data is safely stored in the browser's `LocalStorage` for total privacy.
+- **Sleek Dark Theme**: Clean, distraction-free UI optimized for productivity.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework**: Angular (v17+) using Standalone Components and Signals.
+- **Styling**: SCSS / CSS Custom Properties (Variables) with a custom dark aesthetic.
+- **State & Storage**: Angular Signals combined with browser `LocalStorage`.
+- **PWA**: Angular Service Worker for offline capabilities.
+
+---
+
+## 📁 Project Structure
+
+```text
+src/
+├── app/
+│   ├── core/              # Services (LocalStorage) & Models
+│   ├── features/          # Feature components (Matrix, Routine, TaskList)
+│   ├── app.component.*    # Root layout & grid structure
+│   └── app.routes.ts      # Routing configuration
+└── styles.scss            # Global styles, variables & custom checkboxes
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## 🚀 Getting Started
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Follow these steps to run the project locally on your machine.
 
-```bash
-ng generate component component-name
-```
+### Prerequisites
+- Node.js (v18+ recommended)
+- Angular CLI installed globally
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Installation
 
-```bash
-ng generate --help
-```
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/Ahmd-Naser/eisenhower-matrix.git](https://github.com/Ahmd-Naser/eisenhower-matrix.git)
+   cd eisenhower-matrix
+   ```
 
-## Building
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-To build the project run:
+3. **Run the development server:**
+   ```bash
+   ng serve
+   ```
+
+
+4. Open your browser and navigate to `http://localhost:4200/`.
+
+---
+
+## 💻 Building & Installation as a PWA
+
+To build the application for production and test its PWA capabilities:
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Once hosted (e.g., via GitHub Pages), you can click the **Install** icon directly in your browser's address bar to run it as a standalone desktop application.
 
-## Running unit tests
+---
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## 🤝 Contributing
 
-```bash
-ng test
-```
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/YOUR_USERNAME/eisenhower-matrix/issues).
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## 📝 License
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+This project is open-source and available under the [MIT License](LICENSE).
