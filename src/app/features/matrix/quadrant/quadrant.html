@@ -4,7 +4,15 @@
   <!-- استخدام @for الحديثة بدلاً من *ngFor -->
   @for (task of tasks(); track task.id) {
     <div class="matrix-task-card">
-      <input type="checkbox" [checked]="task.isCompleted" (change)="taskToggled.emit(task.id)">
+      
+        <label class="custom-checkbox">
+            <input 
+                type="checkbox" 
+                [checked]="task.isCompleted" 
+                (change)="taskToggled.emit(task.id)">
+            <span class="checkmark"></span>
+        </label>
+
       <div class="task-details">
         <div class="task-title">{{ task.title }}</div>
         

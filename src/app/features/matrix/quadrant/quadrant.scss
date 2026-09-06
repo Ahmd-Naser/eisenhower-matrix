@@ -79,3 +79,69 @@
 .q2 .inline-add-task:focus { border-color: var(--q2-color); }
 .q3 .inline-add-task:focus { border-color: var(--q3-color); }
 .q4 .inline-add-task:focus { border-color: var(--q4-color); }
+
+/* تصميم Checkbox عصري */
+.custom-checkbox {
+  display: block;
+  position: relative;
+  min-width: 22px;
+  height: 22px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* إخفاء المربع الافتراضي البشع */
+.custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* المربع الجديد */
+.custom-checkbox .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 22px;
+  width: 22px;
+  background-color: transparent;
+  border: 2px solid var(--border-color);
+  border-radius: 6px; /* حواف دائرية ناعمة */
+  transition: all 0.2s ease-in-out;
+}
+
+/* تأثير عند تمرير الماوس */
+.custom-checkbox:hover input ~ .checkmark {
+  border-color: var(--text-muted);
+}
+
+/* شكل المربع عند التحديد */
+.custom-checkbox input:checked ~ .checkmark {
+  background-color: var(--text-main);
+  border-color: var(--text-main);
+}
+
+/* علامة الصح (مخفية افتراضياً) */
+.custom-checkbox .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* إظهار علامة الصح عند التحديد */
+.custom-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* رسم علامة الصح */
+.custom-checkbox .checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 6px;
+  height: 12px;
+  border: solid var(--bg-color);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}

@@ -7,11 +7,19 @@
 
   <!-- الشريط الجانبي -->
   <aside class="sidebar">
-    <div class="section-card" style="height: 100%; display: flex; flex-direction: column;">
+    
+    <!-- كارت الروتين -->
+    <div class="section-card" style="display: flex; flex-direction: column; flex: 1; min-height: 0;">
       <h2 class="section-title">Daily Routine</h2>
-      <!-- خاصية flex: 1 تجعل المكون يتمدد ليملأ الفراغ المتبقي تحت العنوان -->
-      <app-routine-list style="flex: 1; display: block;"></app-routine-list> 
+      <app-routine-list style="flex: 1; overflow: hidden;"></app-routine-list> 
     </div>
+
+    <!-- كارت كل المهام -->
+    <div class="section-card" style="display: flex; flex-direction: column; flex: 1; min-height: 0;">
+      <h2 class="section-title">All Tasks</h2>
+      <app-task-list></app-task-list>
+    </div>
+
   </aside>
 
 

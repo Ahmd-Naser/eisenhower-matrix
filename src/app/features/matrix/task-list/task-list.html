@@ -1,0 +1,28 @@
+<div class="task-list-container">
+  @if (sortedTasks().length === 0) {
+    <div class="empty-state">لا توجد مهام حالياً</div>
+  }
+
+  <div class="task-items">
+    <!-- استخدمنا sortedTasks بدلاً من activeTasks -->
+    @for (task of sortedTasks(); track task.id) {
+      <!-- نضيف كلاس completed إذا تم إنجاز المهمة -->
+      <div class="global-task-item" [class.completed]="task.isCompleted">
+        
+        <div class="task-info">
+          <!-- زر شيك بوكس اختياري للتحكم من القائمة -->
+          
+            
+          <span class="task-title">{{ task.title }}</span>
+          <span class="quadrant-badge" [class]="getQuadrantClass(task.quadrant)">
+            {{ getQuadrantName(task.quadrant) }}
+          </span>
+        </div>
+
+        <button class="action-btn delete-btn" (click)="onDelete(task.id)" title="حذف نهائي">
+          🗑️
+        </button>
+      </div>
+    }
+  </div>
+</div>

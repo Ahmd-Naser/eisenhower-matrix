@@ -1,0 +1,117 @@
+:host {
+  display: block;
+  height: 100%;
+  overflow: hidden;
+}
+
+.task-list-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: 20px;
+}
+
+.task-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.global-task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  padding: 10px;
+  border-radius: 8px;
+
+  .task-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .task-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+}
+
+.quadrant-badge {
+  font-size: 0.7rem;
+  padding: 3px 8px;
+  border-radius: 12px;
+  width: fit-content;
+  font-weight: bold;
+}
+
+// ألوان الـ Badges اعتماداً على المتغيرات العامة
+.q1-badge { background: var(--q1-bg); color: var(--q1-color); }
+.q2-badge { background: var(--q2-bg); color: var(--q2-color); }
+.q3-badge { background: var(--q3-bg); color: var(--q3-color); }
+.q4-badge { background: var(--q4-bg); color: var(--q4-color); }
+
+.action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+  &:hover { opacity: 1; }
+}
+
+
+// ... (الكود السابق الخاص بك كما هو) ...
+
+.global-task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  padding: 10px;
+  border-radius: 8px;
+  transition: opacity 0.3s, background-color 0.3s;
+
+  .task-info {
+    display: flex;
+    flex-direction: row; // جعل العناصر بجوار بعضها
+    align-items: center;
+    gap: 8px;
+    flex: 1; // لكي تدفع زر الحذف للطرف
+  }
+
+  .task-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: text-decoration 0.3s, color 0.3s;
+  }
+
+  // هذا هو التنسيق الجديد للمهمة المنجزة
+  &.completed {
+    opacity: 0.5;
+    background: transparent;
+    border-style: dashed;
+
+    .task-title {
+      text-decoration: line-through;
+      color: var(--text-muted);
+    }
+    
+    // يمكننا تبهيت لون البادج أيضاً ليتناسب مع الإنجاز
+    .quadrant-badge {
+      opacity: 0.7;
+    }
+  }
+}
+
+// ... (باقي الكود السابق) ...
