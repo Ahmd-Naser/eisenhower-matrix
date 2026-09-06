@@ -1,0 +1,126 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.routine-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 15px;
+}
+
+.routine-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.routine-card {
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  padding: 12px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: opacity 0.3s;
+
+  &.completed {
+    opacity: 0.5;
+    border-style: dashed;
+  }
+}
+
+.routine-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.routine-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.routine-status {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  
+  &.due {
+    color: var(--q1-color); // أحمر ليدل على أنه مطلوب
+  }
+}
+
+.refresh-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  transition: transform 0.2s, background 0.2s;
+
+  &:hover {
+    background: var(--surface-color);
+    transform: rotate(45deg);
+  }
+}
+
+// حقل الإضافة نفسه الذي استخدمناه في المربعات
+.inline-add-task {
+  width: 100%;
+  background: transparent;
+  border: 1px dashed var(--border-color);
+  color: var(--text-main);
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: all 0.2s;
+
+  &::placeholder {
+    color: var(--text-muted);
+  }
+  &:focus {
+    border: 1px solid var(--q2-color);
+    background: var(--input-bg);
+  }
+}
+.routine-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  transition: transform 0.2s, background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: var(--surface-color);
+  }
+}
+
+.refresh-btn:hover {
+  transform: rotate(45deg);
+}
+
+.delete-btn {
+  opacity: 0.6;
+  
+  &:hover {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}

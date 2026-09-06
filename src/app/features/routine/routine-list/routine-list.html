@@ -1,1 +1,41 @@
-<p>routine-list works!</p>
+<div class="routine-container">
+  
+  <div class="routine-list">
+    @for (routine of routines(); track routine.id) {
+      <div class="routine-card" [class.completed]="!isDue(routine)">
+        
+        <div class="routine-details">
+          <div class="routine-title">{{ routine.title }}</div>
+          
+          @if (!isDue(routine)) {
+            <div class="routine-status">تم الإنجاز (العداد يعمل)   </div>
+          } @else {
+            <div class="routine-status due">تجاوز 24 ساعة (مطلوب)</div>
+          }
+        </div>
+
+        <!-- حاوية الأزرار -->
+        <div class="routine-actions">
+          <!-- زر التحديث (يظهر فقط إذا كان الروتين مطلوباً) -->
+          <button class="action-btn refresh-btn" (click)="onToggleRoutine(routine.id)" title="إنجاز وتصفير العداد">          
+              🔄
+          </button>
+          
+          <!-- زر الحذف (يظهر دائماً) -->
+          <button class="action-btn delete-btn" (click)="onDeleteRoutine(routine.id)" title="حذف الروتين">
+            🗑️
+          </button>
+        </div>
+
+      </div>
+    }
+  </div>
+
+  <input 
+    #routineInput 
+    type="text" 
+    class="inline-add-task" 
+    placeholder="+ Add new routine..."
+    (keydown)="onAddRoutine($event, routineInput)"
+  >
+</div>

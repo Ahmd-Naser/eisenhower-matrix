@@ -71,6 +71,14 @@ export class StorageService {
     this.saveData();
   }
 
+  deleteRoutine(id: string): void {
+    // تحديث الإشارة (Signal) بفلترة المصفوفة وإزالة الروتين الذي يحمل هذا الـ ID
+    this.routines.update(current => current.filter(r => r.id !== id));
+    
+    // حفظ التغييرات في LocalStorage
+    this.saveData(); 
+  }
+
   toggleRoutineCompletion(id: string): void {
     this.routines.update(current => 
       current.map(r => {
@@ -133,4 +141,7 @@ export class StorageService {
     
     reader.readAsText(file);
   }
+
+  
+ 
 }
